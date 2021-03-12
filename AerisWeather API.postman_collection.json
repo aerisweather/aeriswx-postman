@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "7d985096-6289-4cbe-8eb8-52b7ebbc6169",
+		"name": "AerisWeather API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Forecasts",
+			"item": [
+				{
+					"name": "Air Quality",
+					"item": [
+						{
+							"name": "5 Day",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/airquality/forecasts/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"airquality",
+										"forecasts",
+										"{{location}}"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{CLIENT_ID}}"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{CLIENT_SECRET}}"
+										}
+									]
+								},
+								"description": "Return the next 5 days of air quality data for a defined location.\n\nFor more information, visit our [air quality forecasts endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/airquality-forecasts/) documentation."
+							},
+							"response": []
+						},
+						{
+							"name": "Next 24 Hours",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{env}}/airquality/forecasts/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&filter=1hr&limit=24&from=now&to=1days",
+									"host": [
+										"{{env}}"
+									],
+									"path": [
+										"airquality",
+										"forecasts",
+										"{{location}}"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{CLIENT_ID}}"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{CLIENT_SECRET}}"
+										},
+										{
+											"key": "filter",
+											"value": "1hr"
+										},
+										{
+											"key": "limit",
+											"value": "24"
+										},
+										{
+											"key": "from",
+											"value": "now"
+										},
+										{
+											"key": "to",
+											"value": "1days"
+										}
+									]
+								},
+								"description": "Provides hourly air quality data for the next 24 hours at the specified location.\n\nFor more information, visit our [air quality forecasts endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/airquality-forecasts/) documentation."
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "14 Day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/forecasts/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&limit=14",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"forecasts",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								},
+								{
+									"key": "limit",
+									"value": "14"
+								}
+							]
+						},
+						"description": "Returns 14 day periods of forecast data for the specified location.\n\nFor more information, visit our [forecasts endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/forecasts/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Next 48 hours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/forecasts/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&limit=48&filter=1hr",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"forecasts",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								},
+								{
+									"key": "limit",
+									"value": "48"
+								},
+								{
+									"key": "filter",
+									"value": "1hr"
+								}
+							]
+						},
+						"description": "Returns an hourly forecast for the next 48 hours.\n\nFor more information, visit our [forecasts endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/forecasts/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Weekly Day / Night",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/forecasts/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&limit=14&filter=daynight",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"forecasts",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								},
+								{
+									"key": "limit",
+									"value": "14"
+								},
+								{
+									"key": "filter",
+									"value": "daynight"
+								}
+							]
+						},
+						"description": "Returns a day period (7am - 7pm) and night period (7pm - 7am) for the next 7 days. All times local.\n\nFor more information, visit our [forecasts endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/forecasts/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Next 6 Hour Phrase",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/phrases/summary/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"phrases",
+								"summary",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								}
+							]
+						},
+						"description": "Provides a phrase to describe the weather conditions over the next 6 hours.\n\nFor more information, visit our [phrases summary endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/phrases-summary/) documentation."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currents",
+			"item": [
+				{
+					"name": "Conditions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/conditions/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"conditions",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								}
+							]
+						},
+						"description": "Returns the current conditions for the location provided.\n\nFor more information, visit our [conditions endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/conditions/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Air Quality",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/airquality/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"airquality",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								}
+							]
+						},
+						"description": "Returns current air quality readings for the provided lcoation.\n\nFor more information, visit our [air quality endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/airquality/) documentation."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Summary",
+			"item": [
+				{
+					"name": "Yesterday's Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/conditions/summary/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&from=yesterday",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"conditions",
+								"summary",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								},
+								{
+									"key": "from",
+									"value": "yesterday"
+								}
+							]
+						},
+						"description": "Provides the daily summary for yesterday.\n\nFor more information, visit our [conditions summary endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/conditions-summary/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Today's Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/conditions/summary/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}&from=yesterday",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"conditions",
+								"summary",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								},
+								{
+									"key": "from",
+									"value": "yesterday"
+								}
+							]
+						},
+						"description": "Provides the daily summary for today.\n\nFor more information, visit our [conditions summary endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/conditions-summary/) documentation."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Severe",
+			"item": [
+				{
+					"name": "Alerts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/alerts/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"alerts",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								}
+							]
+						},
+						"description": "Returns all active alerts for the location provided.\n\nFor more information, visit the [alerts endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/alerts/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Tropical Cyclones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/tropicalcyclones/?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"tropicalcyclones",
+								""
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								}
+							]
+						},
+						"description": "Returns all active tropical cyclones around the globe.\n\nFor more information, visit the [tropical cyclones endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/tropicalcyclones/) documentation."
+					},
+					"response": []
+				},
+				{
+					"name": "Lightning Strikes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{env}}/lightning/{{location}}?client_id={{CLIENT_ID}}&client_secret={{CLIENT_SECRET}}",
+							"host": [
+								"{{env}}"
+							],
+							"path": [
+								"lightning",
+								"{{location}}"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{CLIENT_SECRET}}"
+								}
+							]
+						},
+						"description": "Returns all lightning strikes in the last 5 minutes within 25 miles of the location provided.\n\nFor more information, visit our [lightning endpoint](https://www.aerisweather.com/support/docs/api/reference/endpoints/lightning/) documentation."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "batch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{env}}/batch/{{location}}?client_id={{client_id}}&client_secret={{client_secret}}&requests=%2Fplaces%2C%2Fconditions%2C%2Fforecasts%2C%2Fforecasts%3Flimit%3D24%26filter%3D1hr",
+					"host": [
+						"{{env}}"
+					],
+					"path": [
+						"batch",
+						"{{location}}"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}"
+						},
+						{
+							"key": "requests",
+							"value": "%2Fplaces%2C%2Fconditions%2C%2Fforecasts%2C%2Fforecasts%3Flimit%3D24%26filter%3D1hr"
+						}
+					]
+				},
+				"description": "A batch request that combines a places, conditions, and forecasts request. Please note, this batch query still counts as 3 API hits. For best practices, we've encoded the `requests=` parameter.\n\n/places - Geographical information about the queried location\n\n/conditions - Current conditions for the location.\n\n/forecasts - 7 day forecast for the lcoation.\n\n/forecast?limit=24&filter=1hr - Hourly forecast for the next 24 hours.\n\nFor more information, visit the [batch requests](https://www.aerisweather.com/support/docs/api/getting-started/batch/) documentation."
+			},
+			"response": []
+		}
+	]
+}
